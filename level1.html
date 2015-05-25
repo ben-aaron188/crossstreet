@@ -24,7 +24,7 @@
 <div id="frameright"></div>
 <div id="frameleft"></div>
 <div id="plus"><span id="plus_span"></span></div>
-<audio id="perm">
+<audio id="perm" loop>
   <source src="sounds/perm2.mp3" type="audio/mpeg">
 </audio>
 <audio id="loser">
@@ -77,9 +77,11 @@
 		<p class="score_display" style="top:42.5%; font-size: 1.75em">Type in your name:</p>
 		<div id="button1" onclick="func02()">PLAY</br>AGAIN</div>
 		<div id="button2" onclick="func03()">SUBMIT SCORE</div>
-		<form>
-		<input id="typescore" type='text' style="top: 52.5%; left: 10%;" maxlength="10"/>
-		</form>
+    <form action="http://www.newlylabs.net/wp-content/uploads/app1/php/submit_score.php" method="post">
+          <input name="NAME" id="NAME" type='text' style="top: 52.5%; left: 10%;" maxlength="10">
+					<input type="hidden" name="SCORE" id="SCORE" value="">
+					<input type="submit" name="SUBMIT" id="SUBMIT" value="Next">
+    </form>
 	</div>
 
 	<div id="player"></div>

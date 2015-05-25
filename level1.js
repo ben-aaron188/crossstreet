@@ -304,6 +304,7 @@ function init(){
 	$('#background').pan({fps: 17, speed: 14, dir: 'down'});
 	$('#player').sprite({fps: 17, no_of_frames: 10, rewind: false});
 	$('.car_div').sprite({fps: 12, no_of_frames: 6});
+	//
 	$("#instr").css("display", "none")
 	init_cars($("#car_div1"));
 	init_cars($("#car_div2"));
@@ -355,8 +356,7 @@ function func02(){
 }
 
 function func03(){
-	prompt_text = prompt("Please enter your name", "ABCD1234");
-	//prompt(person)
+	$("#SUBMIT").click();
 }
 
 function shuffle_type(){
@@ -366,10 +366,6 @@ function shuffle_type(){
 function background_speed(distance){
 	updated_speed = 14 + (distance*.4)
 	$('#background').spSpeed(updated_speed)
-}
-
-function lightning(){
-//flash lightning
 }
 
 function instruction() {
