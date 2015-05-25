@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RT Game App</title>
+  <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
+  <script type="text/javascript" src="jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="jquery-ui.min.js"></script>
+  <script type="text/javascript" src="jquery.overlaps.js"></script>
+  <script type="text/javascript" src="level1.js"></script>
+  <script type="text/javascript" src="core.js"></script>
+  <script type="text/javascript" src="jquery.spritely.js"></script>
+  <LINK href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body id="bodytest">
+  <div class="page_wrapper">
+    <div class="window">
+      <div id="background"></div>
+      <div id="proxy_page"></div>
+      <div id="black_page"></div>
+      <div id="frameright"></div>
+      <div id="frameleft"></div>
+      <div id="plus">
+        <span id="plus_span"></span>
+      </div>
+      <audio id="perm">
+        <source src="sounds/perm2.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="loser">
+        <source src="sounds/gameover.mp3" type="audio/mpeg">
+      </audio>
+
+      <div id="instr">
+        <p class="score_display" style="top: 2%; font-size: 2.2em; font-weight: bold">Explore the Universe</p>
+        <p class="score_display" style="top: 20%; font-size: 1.3em">Last Score:
+          <span id="lastscore"></span>
+        </p>
+        <p class="score_display" style="top: 25%;  font-size: 1.3em">High Score:
+          <span id="highscore1"></span>
+        </p>
+        <p class="score_display" style="top: 75%; font-size: 1.3em">Press B to start the game!</p>
+        <p class="score_display" style="top: 85%; font-size: 1.0em">Tap left or right to move the spaceship</p>
+        <table id="highscore_table" style="top: 55%">
+          <tr>
+            <th></th>
+            <th>NAME</th>
+            <th>SCORE</th>
+          </tr>
+          <tr>
+            <td>1.</td>
+            <td id="high1_name">Name A</td>
+            <td id="high1_score">123123.123</td>
+          </tr>
+          <tr>
+            <td>2.</td>
+            <td id="high2_name">Name B</td>
+            <td id="high2_score">12312.123</td>
+          </tr>
+          <tr>
+            <td>3.</td>
+            <td id="high3_name">Maxi</td>
+            <td id="high3_score">423.123</td>
+          </tr>
+          <tr>
+            <td>4.</td>
+            <td id="high4_name">Frank</td>
+            <td id="high4_score">12312.123</td>
+          </tr>
+          <tr>
+            <td>5.</td>
+            <td id="high5_name">Frank2</td>
+            <td id="high5_score">123.1212</td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="gameover">
+        <p class="score_display" style="top: 3%; font-size: 3em">Game over!</p>
+        <p class="score_display" style="top: 20%; font-size: 1.75em">Your score:
+          <span id="score"></span>
+        </p>
+        <p class="score_display" style="top: 27.5%; font-size: 1.75em">High Score:
+          <span id="highscore2"></span>
+        </p>
+        <p class="score_display" style="top:42.5%; font-size: 1.75em">Type in your name:</p>
+        <div id="button1" onclick="func02()">PLAY</br>AGAIN</div>
+        <div id="button2" onclick="func03()">SUBMIT SCORE</div>
+        <form action="http://www.newlylabs.net/wp-content/uploads/app1/php/submit_score.php" method="post">
+          <input name="NAME" id="NAME" type='text' style="top: 52.5%; left: 10%;" maxlength="10">
+					<input type="hidden" name="SCORE" id="SCORE" value="">
+					<input type="submit" name="SUBMIT" id="SUBMIT" value="Next">
+        </form>
+      </div>
+    </div>
+
+    <div id="player"></div>
+    <div id="car_div1" class="car_div"></div>
+    <div id="car_div2" class="car_div"></div>
+    <div id="car_div3" class="car_div"></div>
+    <div id="car_div4" class="car_div"></div>
+    <div id="car_div5" class="car_div"></div>
+    <div id="car_div6" class="car_div"></div>
+    <div id="car_div7" class="car_div"></div>
+    <div id="car_div8" class="car_div"></div>
+    <div id="car_div9" class="car_div"></div>
+    <div id="car_div10" class="car_div"></div>
+
+  </div>
+  </div>
+</body>
+
+</html>
