@@ -15,7 +15,7 @@ errors = 0;
 
 $(document)
 .ready(function(){
-	$("#instr, #gameover, #proxy_page, #black_page").css({
+	$("#instr, #gameover, #proxy_page, #black_page, #instruction").css({
 		"margin-left": -($(".window").width()/2),
 		"margin-top": -($(".window").height()/2)
 	})
@@ -47,7 +47,7 @@ $(document)
 	if(code == 66){
 		listen = true;
 		instruction();
-		
+
 	}
 	if(listen == true){
 		var code = e.keyCode || e.which;
@@ -103,7 +103,7 @@ function move_car(object, speed){
 		 get_boundary(object);
 		 if(object_bottom > $(window).height()){
 			 reset_car(object);
-		 }		 
+		 }
 }
 
 function car_type(object){
@@ -124,16 +124,16 @@ function car_type(object){
 		background: "transparent url(images/meteo3.png) no-repeat"
 		})
 		break;
-	case 4: 
+	case 4:
 		object.css({
 		background: "transparent url(images/meteo4.png) no-repeat"
 		})
 		break;
-	case 5: 
+	case 5:
 		object.css({
 		background: "transparent url(images/meteo5.png) no-repeat"
 		})
-		break;		
+		break;
 	}
 }
 
@@ -156,7 +156,7 @@ function reset(object){
 	object.css({
 			"left" : posx + "%",
 			"top" : posy + "%",
-			"display" : "block"	
+			"display" : "block"
 			});
 }
 
@@ -181,8 +181,8 @@ function reset_car(object){
 	object.css({
 			"left" : posx + "%",
 			"top" : posy + "%",
-			"display" : "block"	
-			});		
+			"display" : "block"
+			});
 }
 
 function add_cars(distance){
@@ -222,7 +222,7 @@ function end(){
 		$("#score").text(distance_text);
 		$("#highscore2").text(65.123);
 	}, 2000)
-	
+
 }
 
 function collision_effect(object){
@@ -242,7 +242,7 @@ function init_cars(object){
 	object.css({
 			"left" : posx + "%",
 			"top" : posy + "%",
-			"display" : "block"	
+			"display" : "block"
 			});
 }
 
@@ -251,7 +251,7 @@ function set_player(object) {
 	object.css({
 		left: init_x + "%"
 	});
-	
+
 }
 
 function overflow_detector(){
@@ -269,12 +269,12 @@ function overflow_detector(){
 
 function car_speed() {
 	var car_speed = randomdigit (2,4);
-	return car_speed; 
+	return car_speed;
 }
 
 function minus_lives(lives){
 	switch(lives){
-	case 1: 
+	case 1:
 		$("#p1").addClass("minus")
 		break;
 	case 2:
@@ -320,16 +320,16 @@ function init(){
 	move_car($("#car_div3"), car_speed());
 	move_car($("#car_div4"), car_speed());
 	move_car($("#car_div5"), car_speed());
-	move_car($("#car_div6"), car_speed());	
-	move_car($("#car_div7"), car_speed());	
-	move_car($("#car_div8"), car_speed());	
-	move_car($("#car_div9"), car_speed());	
+	move_car($("#car_div6"), car_speed());
+	move_car($("#car_div7"), car_speed());
+	move_car($("#car_div8"), car_speed());
+	move_car($("#car_div9"), car_speed());
 	move_car($("#car_div10"), car_speed());
 	$("#car_div7, #car_div8, #car_div9, #car_div10").css("display", "none")
 }
 
 function disappear(){
-$("#perm").prop("volume", 0.2)	
+$("#perm").prop("volume", 0.2)
 $(".car_div, #plus").css({
 display: "none"
 })
@@ -375,4 +375,3 @@ function lightning(){
 function instruction() {
 	$("#instruction").css({display: "block"});
 }
-
