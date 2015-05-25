@@ -46,6 +46,7 @@ $(document)
 	var code = e.keyCode || e.which;
 	if(code == 66){
 		listen = true;
+		$("#instr").hide();
 		instruction();
 
 	}
@@ -297,7 +298,8 @@ function points(){
 }
 
 function init(){
-	$("#perm").prop("volume", 0.5).trigger("play");
+	$("#instruction").hide();
+	$("#perm").prop("volume", 0.5).trigger("play");	
 	$("#gameover").prop("volume", 0.9);
 	$("#boing").prop("volume", 1)
 	points();
@@ -374,4 +376,8 @@ function lightning(){
 
 function instruction() {
 	$("#instruction").css({display: "block"});
+	$(this).on("click", function() {
+			init();
+	});
 }
+
