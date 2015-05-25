@@ -20,6 +20,7 @@ var now = (function() {
   return performance.now();
 });
 
+
 //shuffle
 function shuffle(array) {
   var newarr = [];
