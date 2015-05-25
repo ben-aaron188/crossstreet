@@ -208,12 +208,13 @@ function collision_detector(){
 
 function end(){
 	clearInterval(pointsInterval)
+	$("#SCORE").val(distance);
 	disappear()
 	cancelAnimationFrame(animationframeID);
 	localStorage["lastscore"] = distance_text;
 	$("#player, #background").spStop();
 	cancelAnimationFrame(movementID);
-	$(".car_div" ).remove();
+	//$(".car_div" ).remove();
 	setTimeout(function(){
 	$("#player").toggle("explode");
 	}, 400)
@@ -299,7 +300,7 @@ function points(){
 
 function init(){
 	$("#instruction").hide();
-	$("#perm").prop("volume", 0.5).trigger("play");	
+	$("#perm").prop("volume", 0.5).trigger("play");
 	$("#gameover").prop("volume", 0.9);
 	$("#boing").prop("volume", 1)
 	points();
@@ -376,4 +377,3 @@ function instruction() {
 			init();
 	});
 }
-
