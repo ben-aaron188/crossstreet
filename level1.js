@@ -11,10 +11,16 @@ ids,
 listen,
 bg_speed,
 bg_speed_proxy,
-errors = 0;
+errors = 0,
+retrieved = [];
 
 $(document)
 .ready(function(){
+
+	var url =  "http://www.newlylabs.net/wp-content/uploads/app1/php/get_score.php";
+	console.log(window.$.getJSON(url + "?callback=?"))
+
+
 	$("#instr, #gameover, #proxy_page, #black_page, #instruction").css({
 		"margin-left": -($(".window").width()/2),
 		"margin-top": -($(".window").height()/2)
