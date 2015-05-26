@@ -244,9 +244,11 @@ height: 20%;
 #nonamemsg {
 position: absolute;
 display: block;
+z-index: 30;
 font-family: Impact;
 text-align: center;
-color: white;
+font-weight: lighter;
+color: red;
 }
 #startdiv {
 opacity: .75;

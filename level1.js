@@ -63,13 +63,26 @@ $(document)
   })
 
 function moveshuttle() {
-  $("#tapleft").on("tap", function(e) {
-		left();
+  $("#tapleft").touchstart(function(e) {
+    count++
+    if (count < 2) {
+      left();
+    }
+  })
+  .touchend(function(e) {
+    count = 0
+    cancelAnimationFrame(animationframeID);
   });
-
-  $("#tapright").on("tap", function(e) {
-    right();
-  });
+  $("#tapright").touchstart(function(e) {
+    count++
+    if (count < 2) {
+      right();
+    }
+  })
+  .touchend(function(e) {
+    count = 0
+    cancelAnimationFrame(animationframeID);
+  })
 }
 
 function move_car(object, speed) {
@@ -313,22 +326,26 @@ function background_speed(distance) {
 }
 
 function instruction()  {
-  $("#instruction").css({
+  $("#instruction")
+  .css({
     display: "block"
-  });
-  $(this).on("click touchstart", function() {
+  })
+  .touchstart(function(e){
     init();
     $(".tapdivs").css({
       display: "block"
     });
     moveshuttle();
-  });
+  })
+  .off('touchend', this)
 }
 
 function clicktostart() {
-  $("#startdiv").on("click touchstart", function() {
+  $("#startdiv")
+  .touchstart(function(e){
     listen = true;
     $("#instr").hide();
-    instruction();
-  });
+    instruction()
+  })
+  .off('touchend', this)
 }
