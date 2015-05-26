@@ -7,6 +7,8 @@
 		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
 		<script type="text/javascript" src="jquery-2.1.3.min.js"></script>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
 		<script type="text/javascript" src="jquery-ui.min.js"></script>
 		<script type="text/javascript" src="jquery.overlaps.js"></script>
 		<script type="text/javascript" src="level1.js"></script>
@@ -37,7 +39,7 @@
 	<p class="score_display" style="top: 2%; font-size: 2.2em; font-weight: bold">Explore the Universe</p>
 	<p class="score_display" style="top: 20%; font-size: 1.3em">Last Score: <span id="lastscore"></span></p>
 	<p class="score_display" style="top: 25%;  font-size: 1.3em">High Score: <span id="highscore1"></span></p>
-	<p class="score_display" style="top: 73%; font-size: 1.5em">Press B to start the game!</p>
+	<p class="score_display" style="top: 73%; font-size: 1.5em">Tap to start the game!</p>
 	<table id="highscore_table" style="top: 55%">
 		<tr>
 			<th></th>
@@ -77,10 +79,12 @@
 		<p class="score_display" style="top: 20%; font-size: 1.75em">Your score: <span id="score"></span></p>
 		<p class="score_display" style="top: 27.5%; font-size: 1.75em">High Score: <span id="highscore2"></span></p>
 		<p class="score_display" style="top:42.5%; font-size: 1.75em">Type in your name:</p>
-		<div id="button1" onclick="func02()">PLAY</br>AGAIN</div>
-		<div id="button2" onclick="func03()">SUBMIT SCORE</div>
-    <form action="http://www.newlylabs.net/wp-content/uploads/app1/php/score_submit.php" method="post">
-          <input name="NAME" id="NAME" placeholder="your name" type='text' style="top: 52.5%; left: 10%;" maxlength="10">
+		<div id="button1" ontap="func02()">PLAY</br>AGAIN</div>
+		<div id="button2" ontap="func03()">SUBMIT SCORE</div>
+    <form action="http://www.newlylabs.net/wp-content/uploads/app1/php/score_submit.php" method="post">  
+	  
+	  <label for="NAME"></label>
+	  <input type="text" name="name" id="NAME" style="top: 52.5%; left: 10%; font-color: white" maxlength=10>
 					<input type="hidden" name="SCORE" id="SCORE" value="">
 					<input type="submit" name="SUBMIT" id="SUBMIT" value="Next" style="visibility: hidden">
     </form>
@@ -108,5 +112,13 @@
 <p id="instruction_fonts" style="top: 68%; left: 60%; font-size: 1.5em; position: absolute">Move right</p>
 <p id="instruction_fonts" style="top: 27.5%; font-size: 2em; position: relative">Tap to start!</p>
 </div>
+
+
+<div class="tapdivs" id="tapleft" style="bottom: 0; left: 0"></div>
+<div class="tapdivs" id="tapright" style="bottom: 0; right: 0"></div>
+</div>
+
+
+
 	</body>
 </html>

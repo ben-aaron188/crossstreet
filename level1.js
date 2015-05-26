@@ -41,7 +41,10 @@ $(document)
 	init_cars($("#car_div4"));
 	init_cars($("#car_div5"));
 	init_cars($("#car_div6"));
+	clicktostart();
 })
+
+/*
 .keydown(function(e){
 	var code = e.keyCode || e.which;
 	if(code == 66){
@@ -49,7 +52,6 @@ $(document)
 		$("#instr").hide();
 		instruction();
 
-	}
 	if(listen == true){
 		var code = e.keyCode || e.which;
 		count++
@@ -92,6 +94,16 @@ $(document)
 			cancelAnimationFrame(animationframeID);
 		}
 })
+*/
+
+function moveshuttle() {
+	$("#tapleft").on("tap", function() { 
+		left(12);
+	});
+	$("#tapright").on("tap", function() {
+		right(12);
+	});	
+}
 
 function move_car(object, speed){
 	movementID = requestAnimationFrame(function(){
@@ -375,5 +387,14 @@ function instruction() {
 	$("#instruction").css({display: "block"});
 	$(this).on("click", function() {
 			init();
+			moveshuttle();
 	});
+}
+
+function clicktostart() { 
+$(this).on("click", function() {
+	listen = true;
+	$("#instr").hide();
+	instruction();
+	});	
 }
