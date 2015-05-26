@@ -199,11 +199,10 @@ left: 70%;
 	height:10%;
 	border:2px solid black;
 	position: absolute;
-	opacity: 0.5;
 	font-family: Impact;
 	display: block;
 	margin: 0 auto;
-	font-color: white;
+	color: white;
 	font-size: 3em;
 	text-align: center;
 }
