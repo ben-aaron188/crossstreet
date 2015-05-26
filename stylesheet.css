@@ -249,6 +249,7 @@ font-family: Impact;
 text-align: center;
 font-weight: lighter;
 color: red;
+display: none;
 }
 #startdiv {
 opacity: .75;
