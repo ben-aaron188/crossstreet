@@ -385,14 +385,14 @@ function background_speed(distance){
 
 function instruction() {
 	$("#instruction").css({display: "block"});
-	$(this).on("click", function() {
+	$(this).on("tap", function() {
 			init();
 			moveshuttle();
 	});
 }
 
 function clicktostart() { 
-$(this).on("click", function() {
+$(this).on("tap", function() {
 	listen = true;
 	$("#instr").hide();
 	instruction();
