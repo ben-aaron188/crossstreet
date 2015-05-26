@@ -17,9 +17,9 @@ var animationframeID,
 $(document)
   .ready(function() {
 
-
     $.get("get_score.php", function(data) {
       retrieved = data;
+			$("#highscore1").text(retrieved.score[0]);
       $("#high1_name").text(retrieved.name[0]);
       $("#high1_score").text(retrieved.score[0]);
       $("#high2_name").text(retrieved.name[1]);
@@ -31,8 +31,6 @@ $(document)
       $("#high5_name").text(retrieved.name[4]);
       $("#high5_score").text(retrieved.score[4]);
     }, "json");
-
-
 
     $("#instr, #gameover, #proxy_page, #black_page, #instruction").css({
       "margin-left": -($(".window").width() / 2),
@@ -46,12 +44,13 @@ $(document)
       "margin-left": -($("#highscore_table").width() / 2),
       "margin-top": -($("#highscore_table").height() / 2)
     })
-    if (localStorage["lastscore"] > 0) {
+
+		if (localStorage["lastscore"] > 0) {
       $("#lastscore").text(localStorage["lastscore"])
     } else {
       $("#lastscore").text("NA")
     }
-    $("#highscore1").text(65.123);
+
     find_ids($(".car_div"));
     set_player($("#player"));
     init_cars($("#car_div1"));
@@ -60,31 +59,31 @@ $(document)
     init_cars($("#car_div4"));
     init_cars($("#car_div5"));
     init_cars($("#car_div6"));
-		clicktostart();
+    clicktostart();
   })
 
-	function moveshuttle() {
-		$("#tapleft").on("tap", function() {
-			left(12);
-		});
+function moveshuttle() {
+  $("#tapleft").on("tap", function(e) {
+		left();
+  });
 
-		$("#tapright").on("tap", function() {
-			right(12);
-		});
-	}
+  $("#tapright").on("tap", function(e) {
+    right();
+  });
+}
 
-	function move_car(object, speed){
-		movementID = requestAnimationFrame(function(){
-			move_car(object, speed)
-		});
-		collision_detector();
-		object.css({
-				top: "+=" + speed
-			 });
-			 get_boundary(object);
-			 if(object_bottom > $(window).height()){
-				 reset_car(object);
-			 }
+function move_car(object, speed) {
+  movementID = requestAnimationFrame(function() {
+    move_car(object, speed)
+  });
+  collision_detector();
+  object.css({
+    top: "+=" + speed
+  });
+  get_boundary(object);
+  if (object_bottom > $(window).height()) {
+    reset_car(object);
+  }
 }
 
 function car_type(object) {
@@ -116,29 +115,6 @@ function car_type(object) {
       })
       break;
   }
-}
-
-function reset(object) {
-  if (count_runs == runs) {
-    confirm("Your universe is " + distance + " billion kilometers wide (??!!)")
-    clearInterval(pointsInterval)
-    disappear()
-    cancelAnimationFrame(animationframeID);
-    localStorage["lastscore"] = distance;
-    $("#player, #background").spStop();
-    setTimeout(function() {
-      $("#player").toggle("explode");
-    }, 1000)
-    window.location = "level1.html"
-  }
-  count_runs++
-  var posx = randomdigit(-90, 90);
-  var posy = randomdigit(-10, -5);
-  object.css({
-    "left": posx + "%",
-    "top": posy + "%",
-    "display": "block"
-  });
 }
 
 function reset_car(object) {
@@ -188,7 +164,7 @@ function collision_detector() {
 
 function end() {
   clearInterval(pointsInterval)
-  $("#SCORE").val(distance.toFixed(3));
+  $("#SCORE").val(distance);
   disappear()
   cancelAnimationFrame(animationframeID);
   localStorage["lastscore"] = distance_text;
@@ -205,16 +181,6 @@ function end() {
     $("#highscore2").text(65.123);
   }, 2000)
 
-}
-
-function collision_effect(object) {
-  listen = false
-  for (var x = 0; x < 2; x++) {
-    object.fadeIn("fast").fadeOut("fast").stop().fadeIn("fast");
-  }
-  $("#boing").trigger("play");
-  distance = distance * (4 / 5)
-  reset_all()
 }
 
 function init_cars(object) {
@@ -244,8 +210,6 @@ function overflow_detector() {
   get_boundary($("#player"));
   if ((object_left < left_boundary) || (object_right > right_boundary) || (object_top < top_boundary)) {
     end()
-      //$("#boundary_touched").trigger("play");
-      //distance = distance * (3/5)
   }
 }
 
@@ -254,25 +218,11 @@ function car_speed() {
   return car_speed;
 }
 
-function minus_lives(lives) {
-  switch (lives) {
-    case 1:
-      $("#p1").addClass("minus")
-      break;
-    case 2:
-      $("#p2").addClass("minus")
-      break;
-    case 3:
-      $("#p3").addClass("minus")
-      break;
-  }
-}
-
 function points() {
   increment = 0.314159
   pointsInterval = setInterval(function() {
     background_speed(distance);
-    distance = distance.toFixed(3) + increment;
+    distance = distance + increment;
     distance_text = distance.toFixed(3)
     $("#plus_span").text(distance_text)
   }, 314.159);
@@ -298,8 +248,6 @@ function init() {
     fps: 12,
     no_of_frames: 6
   });
-  //
-  $("#instr").css("display", "none")
   init_cars($("#car_div1"));
   init_cars($("#car_div2"));
   init_cars($("#car_div3"));
@@ -341,21 +289,17 @@ function reset_all() {
   init_cars($("#car_div6"));
 }
 
-function func01() {
-  window.location = "level1.html"
-}
-
 function func02() {
   window.location = "level1.html"
 }
 
 function func03() {
-	if($("#NAME").val().length < 3){
-		$("#nonamemsg").css("display", "block")
-		setTimeout(function(){
-			$("#nonamemsg").css("display", "none")
-		}, 1000)
-	};
+  if ($("#NAME").val().length < 3) {
+    $("#nonamemsg").css("display", "block")
+    setTimeout(function() {
+      $("#nonamemsg").css("display", "none")
+    }, 1000)
+  };
   $("#SUBMIT").click();
 }
 
@@ -368,20 +312,23 @@ function background_speed(distance) {
   $('#background').spSpeed(updated_speed)
 }
 
-function instruction() {
-	$("#instruction").css({display: "block"});
-	$(this).on("click touchstart", function() {
-			init();
-			$(".tapdivs").css({display: "block"});
-			moveshuttle();
-	});
+function instruction()  {
+  $("#instruction").css({
+    display: "block"
+  });
+  $(this).on("click touchstart", function() {
+    init();
+    $(".tapdivs").css({
+      display: "block"
+    });
+    moveshuttle();
+  });
 }
 
 function clicktostart() {
-$("#startdiv").on("click touchstart", function() {
-	listen = true;
-	$("#instr").hide();
-	$("#startdiv").css({display: "none"});
-	instruction();
-	});
+  $("#startdiv").on("click touchstart", function() {
+    listen = true;
+    $("#instr").hide();
+    instruction();
+  });
 }
