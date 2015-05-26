@@ -60,70 +60,31 @@ $(document)
     init_cars($("#car_div4"));
     init_cars($("#car_div5"));
     init_cars($("#car_div6"));
-  })
-  .keydown(function(e) {
-    var code = e.keyCode || e.which;
-    if (code == 66) {
-      listen = true;
-      $("#instr").hide();
-      instruction();
-
-    }
-    if (listen == true) {
-      var code = e.keyCode || e.which;
-      count++
-      if (count < 2) {
-        if (collision_count < 1) {
-          switch (code) {
-            case 37:
-              left(12);
-              break
-            case 39:
-              right(12);
-              break
-          }
-        } else if (collision_count > 1 && collision_count < 2) {
-          switch (code) {
-            case 37:
-              left(8);
-              break
-            case 39:
-              right(8);
-              break
-          }
-        } else {
-          switch (code) {
-            case 37:
-              left(5);
-              break
-            case 39:
-              right(5);
-              break
-          }
-        }
-      }
-    }
-  })
-  .keyup(function(e) {
-    var code = e.keyCode || e.which;
-    count = 0
-    if (code == 37 || code == 38 || code == 39 || code == 40) {
-      cancelAnimationFrame(animationframeID);
-    }
+		clicktostart();
   })
 
-function move_car(object, speed) {
-  movementID = requestAnimationFrame(function() {
-    move_car(object, speed)
-  });
-  collision_detector();
-  object.css({
-    top: "+=" + speed
-  });
-  get_boundary(object);
-  if (object_bottom > $(window).height()) {
-    reset_car(object);
-  }
+	function moveshuttle() {
+		$("#tapleft").on("tap", function() {
+			left(12);
+		});
+
+		$("#tapright").on("tap", function() {
+			right(12);
+		});
+	}
+
+	function move_car(object, speed){
+		movementID = requestAnimationFrame(function(){
+			move_car(object, speed)
+		});
+		collision_detector();
+		object.css({
+				top: "+=" + speed
+			 });
+			 get_boundary(object);
+			 if(object_bottom > $(window).height()){
+				 reset_car(object);
+			 }
 }
 
 function car_type(object) {
@@ -407,11 +368,18 @@ function background_speed(distance) {
   $('#background').spSpeed(updated_speed)
 }
 
-function instruction()  {
-  $("#instruction").css({
-    display: "block"
-  });
-  $(this).on("click", function() {
-    init();
-  });
+function instruction() {
+	$("#instruction").css({display: "block"});
+	$(this).on("click touchstart", function() {
+			init();
+			moveshuttle();
+	});
+}
+
+function clicktostart() {
+$(this).on("click touchstart", function() {
+	listen = true;
+	$("#instr").hide();
+	instruction();
+	});
 }
