@@ -44,7 +44,7 @@
         <p class="score_display" style="top: 25%;  font-size: 1.3em">High Score:
           <span id="highscore1"></span>
         </p>
-        <p class="score_display" style="top: 73%; font-size: 1.5em">Press B to start the game!</p>
+        <p class="score_display" style="top: 73%; font-size: 1.5em">Tap to start the game!</p>
         <div id="startdiv" style="top: 82%"></div>
 
         <table id="highscore_table" style="top: 55%">
@@ -89,10 +89,10 @@
         <p class="score_display" style="top: 27.5%; font-size: 1.75em">High Score:
           <span id="highscore2"></span>
         </p>
-        <p class="score_display" style="top:42.5%; font-size: 1.75em">Type in your name:</p>
+        <p class="score_display" style="top:42.5%; font-size: 1.75em">Your name:</p>
         <div id="button1" onclick="func02()">PLAY</br>AGAIN</div>
         <div id="button2" onclick="func03()">SUBMIT SCORE</div>
-        <form action="http://www.newlylabs.net/wp-content/uploads/app1/php/score_submit.php" method="post">
+        <form action="http://www.newlylabs.net/wp-content/uploads/app1/final/score_submit.php" method="post" data-mini="true" data-ajax="false">
           <input name="NAME" id="NAME" placeholder="your name" type='text' style="top: 52.5%; left: 10%;" maxlength="10">
           <input type="hidden" name="SCORE" id="SCORE" value="">
           <input type="submit" name="SUBMIT" id="SUBMIT" value="Next" style="visibility: hidden">

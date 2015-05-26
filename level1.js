@@ -312,8 +312,9 @@ function func03() {
     setTimeout(function() {
       $("#nonamemsg").css("display", "none")
     }, 1000)
-  };
-  $("#SUBMIT").click();
+  } else {
+    $("#SUBMIT").click();
+  }
 }
 
 function shuffle_type() {
