@@ -99,10 +99,11 @@ $(document)
 function moveshuttle() {
 	$("#tapleft").on("tap", function() { 
 		left(12);
-	});
+	});	
+
 	$("#tapright").on("tap", function() {
 		right(12);
-	});	
+	});
 }
 
 function move_car(object, speed){
@@ -385,14 +386,14 @@ function background_speed(distance){
 
 function instruction() {
 	$("#instruction").css({display: "block"});
-	$(this).on("tap", function() {
+	$(this).on("click touchstart", function() {
 			init();
 			moveshuttle();
 	});
 }
 
 function clicktostart() { 
-$(this).on("tap", function() {
+$(this).on("click touchstart", function() {
 	listen = true;
 	$("#instr").hide();
 	instruction();
