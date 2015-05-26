@@ -372,14 +372,16 @@ function instruction() {
 	$("#instruction").css({display: "block"});
 	$(this).on("click touchstart", function() {
 			init();
+			$(".tapdivs").css({display: "block"});
 			moveshuttle();
 	});
 }
 
 function clicktostart() {
-$(this).on("click touchstart", function() {
+$("#startdiv").on("click touchstart", function() {
 	listen = true;
 	$("#instr").hide();
+	$("#startdiv").css({display: "none"});
 	instruction();
 	});
 }
