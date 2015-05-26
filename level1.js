@@ -17,8 +17,10 @@ retrieved = [];
 $(document)
 .ready(function(){
 
-	var url =  "http://www.newlylabs.net/wp-content/uploads/app1/php/get_score.php";
-	console.log(window.$.getJSON(url + "?callback=?"))
+
+$.get("get_score.php", function(data) {
+  console.log(data);
+}, "json" );
 
 
 	$("#instr, #gameover, #proxy_page, #black_page, #instruction").css({
