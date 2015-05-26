@@ -237,7 +237,7 @@ font-family: Impact;
 }
 .tapdivs {
 position: fixed;
-display: block;
+display: none;
 width: 50%;
 height: 20%;
 }
@@ -248,3 +248,18 @@ font-family: Impact;
 text-align: center;
 color: white;
 }
+#startdiv {
+opacity: .75;
+text-align: center;
+display: block;
+position: absolute;
+background-color: white;
+width: 20%;
+height: 11%;
+position: relative;
+border-radius: 100%;
+margin-left: auto;
+margin-right: auto;
+}
+
+
