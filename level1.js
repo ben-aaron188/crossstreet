@@ -26,6 +26,16 @@ $(document)
     css_center($("#plus"), $(".window"));
     css_center($("#highscore_table"));
     css_center_full($("#frameleft, #frameright"))
+    css_center($("#exploretheuniverse"));
+    css_center($("#last_score"));
+    css_center($("#highscore"));
+    css_center($("#taptostartthegame"));
+    css_center($("#taptomovethespaceship"));
+    css_center($("#taptostart"));
+    css_center($("#game_over"));
+    css_center($("#yourscore"));
+    css_center($("#high_score"));
+
 
     $("#exploretheuniverse").textfill()
 

@@ -74,11 +74,13 @@ letter-spacing: 6px;
 opacity: .4;
 }
 #highscore_table{
+top: 55%;
+border: 5px solid white;
 text-align: left;
 border-spacing: 1px;
 font-size: 1.5em;
-left: 60%;
-width: 100%;
+left: 50%;
+width: 80%;
 color: Yellow;
 position: absolute;
 }
@@ -267,86 +269,117 @@ margin-left: auto;
 margin-right: auto;
 }
 #exploretheuniverse {
+left: 50%;
 position: absolute;
 display: block;
-height: 10vh;
-width: 100%;
-border: 1px solid White;
+height: 5vh;
+width: 70%;
+border: 5px solid white;
+top: 5%;
+font-weight: bold;
 }
 #last_score {
-text-align: center;
+top: 23%;
+left: 40%;
+text-align: left;
 position: absolute;
 display: block;
-height: 10vh;
-width: 100%;
+height: 3vh;
+width: 30%;
+border: 5px solid white;
 }
 #highscore {
-text-align: center;
-margin: 0 auto;
+top: 30%;
+left: 40%;
+text-align: left;
 position: absolute;
 display: block;
-height: 10vh;
-width: 100%;
+height: 3vh;
+width: 30%;
+border: 5px solid white;
 }
 #taptostartthegame {
+top: 75%;
+left: 50%;
 position: absolute;
 display: block;
-height: 10vh;
-width: 100%;
+height: 4vh;
+width: 60%;
+border: 5px solid white;
 }
-#gameover! {
+#game_over {
+top: 3%;
+left: 50%;
+text-align: center;
 position: absolute;
 display: block;
-height: 10vh;
-width: 100%;
+height: 6vh;
+width: 70%;
+border: 5px solid white;
 }
 #yourscore {
+top: 20%;
+left: 50%;
 text-align: left;
 position: absolute;
 display: block;
-height: 10vh;
-width: 100%;
-left: 20%;
+height: 3vh;
+width: 40%;
+border: 5px solid white;
 }
 #high_score {
-text-align: left;
+text-align: center;
 position: absolute;
 display: block;
-height: 10vh;
-width: 100%;
-left: 20%;
+height: 3vh;
+width: 40%;
+left: 50%;
+top: 27.5%;
+border: 5px solid white;
 }
 #yourname {
 position: absolute;
 display: block;
-height: 10vh;
-width: 100%;
+height: 3vh;
+width: 30%;
+border: 5px solid white;
 }
 #taptomovethespaceship {
+display: block;
+text-align: center;
+left: 50%;
 top: 15%;
-position: relative;
-width: 100%;
-height: 10vh;
+display: block;
+position: absolute;
+width: 60%;
+height: 6vh;
+border: 5px solid white;
 }
 #moveleft {
 text-align: center;
 top: 75%;
+left: 7%;
 position: absolute;
 width: 30%;
 height: 3vh;
+border: 5px solid white;
 }
 #moveright {
 text-align: center;
 top: 75%;
-left: 65%;
+left: 58%;
+position: absolute;
+width: 33%;
+height: 3vh;
+border: 5px solid white;
+}
+#taptostart {
+display: block;
+text-align: center;
+left: 50%;
+top: 27.5%;
 position: absolute;
 width: 30%;
 height: 3vh;
-}
-#taptostart {
-margin: 0 auto;
-top: 27.5%;
-position: relative;
-width: 30%;
-height: 3vh;
+border: 5px solid white;
 }
