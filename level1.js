@@ -23,22 +23,16 @@ $(document)
     css_center($("#proxy_page"), $(".window"));
     css_center($("#black_page"), $(".window"));
     css_center($("#instruction"), $(".window"));
-    css_center($("#plus"), $(".window"));
     css_center($("#highscore_table"));
     css_center_full($("#frameleft, #frameright"))
     css_center($("#exploretheuniverse"));
     css_center($("#last_score"));
     css_center($("#highscore"));
     css_center($("#taptostartthegame"));
-    css_center($("#taptomovethespaceship"));
-    css_center($("#taptostart"));
-    css_center($("#game_over"));
-    css_center($("#yourscore"));
-    css_center($("#high_score"));
     css_center($("#nonamemsg"));
 
 
-    $("#exploretheuniverse, #highscore_table,  #last_score, #highscore, #taptostartthegame, #game_over, #yourscore, #high_score, #yourname, #button1, #button2, #nonamemsg, #taptomovethespaceship, #moveleft, #moveright, #taptostart").textfill()
+    $("#exploretheuniverse, #highscore_table, #last_score, #highscore, #taptostartthegame").textfill()
 
 
     $.get("get_score.php", function(data) {
@@ -199,13 +193,17 @@ function end() {
   localStorage["lastscore"] = distance_text;
   $("#player, #background").spStop();
   cancelAnimationFrame(movementID);
-  //$(".car_div" ).remove();
   setTimeout(function() {
     $("#player").toggle("explode");
   }, 400)
   $("#loser").trigger("play");
   setTimeout(function() {
     $("#gameover, #restart").css("display", "block");
+    css_center($("#game_over"));
+    css_center($("#yourscore"));
+    css_center($("#high_score"));
+    css_center($("#yourname"));
+    $("#game_over, #yourscore, #high_score, #yourname, #button1, #button2, #nonamemsg").textfill()
     $("#yourscore").append(distance_text);
     $("#high_score").append(retrieved.score[0]);
   }, 2000)
@@ -257,12 +255,14 @@ function points() {
     background_speed(distance);
     distance = distance + increment;
     distance_text = distance.toFixed(3)
-    $("#plus_span").text(distance_text)
+    $("#plus").text(distance_text)
   }, 314.159);
 }
 
 function init() {
   $("#instruction").hide();
+  css_center($("#plus"));
+  $("#plus").textfill();
   $("#perm").prop("volume", 0.5).trigger("play");
   $("#gameover").prop("volume", 0.9);
   $("#boing").prop("volume", 1)
@@ -351,6 +351,10 @@ function instruction()  {
     .css({
       display: "block"
     })
+    css_center($("#taptomovethespaceship"));
+    css_center($("#taptostart"));
+    $("#taptomovethespaceship, #moveleft, #moveright, #taptostart").textfill()
+  $("#instruction")
     .touchstart(function(e) {
       init();
       $(".tapdivs").css({
