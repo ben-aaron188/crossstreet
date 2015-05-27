@@ -12,10 +12,13 @@ var animationframeID,
   bg_speed,
   bg_speed_proxy,
   errors = 0,
-  retrieved = [];
+  retrieved = [],
+  autoSizeText;
 
 $(document)
   .ready(function() {
+
+ //return autoSizeText();
 
     $.get("get_score.php", function(data) {
       retrieved = data;
