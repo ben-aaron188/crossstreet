@@ -29,7 +29,6 @@ $(document)
     css_center($("#last_score"));
     css_center($("#highscore"));
     css_center($("#taptostartthegame"));
-    css_center($("#nonamemsg"));
 
 
     $("#exploretheuniverse, #highscore_table, #last_score, #highscore, #taptostartthegame").textfill()
@@ -202,8 +201,8 @@ function end() {
     css_center($("#game_over"));
     css_center($("#yourscore"));
     css_center($("#high_score"));
-    css_center($("#yourname"));
-    $("#game_over, #yourscore, #high_score, #yourname, #button1, #button2, #nonamemsg").textfill()
+    css_center($("#button1, #button2"));
+    $("#game_over, #yourscore, #high_score, #button1, #button2, #nonamemsg").textfill()
     $("#yourscore").append(distance_text);
     $("#high_score").append(retrieved.score[0]);
   }, 2000)
@@ -328,7 +327,8 @@ function func02() {
 
 function func03() {
   if ($("#NAME").val().length < 3) {
-    $("#nonamemsg").css("display", "block")
+    $("#nonamemsg").css("display", "block");
+    css_center($("#nonamemsg"));
     setTimeout(function() {
       $("#nonamemsg").css("display", "none")
     }, 1000)
@@ -351,9 +351,9 @@ function instruction()  {
     .css({
       display: "block"
     })
-    css_center($("#taptomovethespaceship"));
-    css_center($("#taptostart"));
-    $("#taptomovethespaceship, #moveleft, #moveright, #taptostart").textfill()
+  css_center($("#taptomovethespaceship"));
+  css_center($("#taptostart"));
+  $("#taptomovethespaceship, #moveleft, #moveright, #taptostart").textfill()
   $("#instruction")
     .touchstart(function(e) {
       init();
