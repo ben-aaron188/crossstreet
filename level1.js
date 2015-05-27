@@ -37,11 +37,12 @@ $(document)
     css_center($("#high_score"));
 
 
-    $("#exploretheuniverse").textfill()
+    $("#exploretheuniverse, #highscore_table, #last_score, #highscore, #taptostartthegame, #game_over, #yourscore, #high_score, #yourname, #button1, #button2, #nonamemsg, #taptomovethespaceship, #moveleft, #moveright, #taptostart").textfill()
+
 
     $.get("get_score.php", function(data) {
       retrieved = data;
-			$("#highscore1").text(retrieved.score[0]);
+      $("#highscore1").text(retrieved.score[0]);
       $("#high1_name").text(retrieved.name[0]);
       $("#high1_score").text(retrieved.score[0]);
       $("#high2_name").text(retrieved.name[1]);
@@ -55,7 +56,7 @@ $(document)
     }, "json");
 
 
-		if (localStorage["lastscore"] > 0) {
+    if (localStorage["lastscore"] > 0) {
       $("#lastscore").text(localStorage["lastscore"])
     } else {
       $("#lastscore").text("NA")
@@ -74,25 +75,25 @@ $(document)
 
 function moveshuttle() {
   $("#tapleft").touchstart(function(e) {
-    count++
-    if (count < 2) {
-      left();
-    }
-  })
-  .touchend(function(e) {
-    count = 0
-    cancelAnimationFrame(animationframeID);
-  });
+      count++
+      if (count < 2) {
+        left();
+      }
+    })
+    .touchend(function(e) {
+      count = 0
+      cancelAnimationFrame(animationframeID);
+    });
   $("#tapright").touchstart(function(e) {
-    count++
-    if (count < 2) {
-      right();
-    }
-  })
-  .touchend(function(e) {
-    count = 0
-    cancelAnimationFrame(animationframeID);
-  })
+      count++
+      if (count < 2) {
+        right();
+      }
+    })
+    .touchend(function(e) {
+      count = 0
+      cancelAnimationFrame(animationframeID);
+    })
 }
 
 function move_car(object, speed) {
@@ -162,10 +163,10 @@ function reset_car(object) {
     "left": posx + "%",
     "top": posy + "%",
     "display": "block",
-    "width" : "5%",
-    "height" : "0",
+    "width": "5%",
+    "height": "0",
     "background-size": "cover",
-    "padding-bottom" : "20%"
+    "padding-bottom": "20%"
   });
 }
 
@@ -218,10 +219,10 @@ function init_cars(object) {
     "left": posx + "%",
     "top": posy + "%",
     "display": "block",
-    "width" : "5%",
-    "height" : "0",
+    "width": "5%",
+    "height": "0",
     "background-size": "cover",
-    "padding-bottom" : "20%"
+    "padding-bottom": "20%"
   });
 }
 
@@ -346,25 +347,25 @@ function background_speed(distance) {
 
 function instruction()  {
   $("#instruction")
-  .css({
-    display: "block"
-  })
-  .touchstart(function(e){
-    init();
-    $(".tapdivs").css({
+    .css({
       display: "block"
-    });
-    moveshuttle();
-  })
-  .off('touchend', this)
+    })
+    .touchstart(function(e) {
+      init();
+      $(".tapdivs").css({
+        display: "block"
+      });
+      moveshuttle();
+    })
+    .off('touchend', this)
 }
 
 function clicktostart() {
   $("#startdiv")
-  .touchstart(function(e){
-    listen = true;
-    $("#instr").hide();
-    instruction()
-  })
-  .off('touchend', this)
+    .touchstart(function(e) {
+      listen = true;
+      $("#instr").hide();
+      instruction()
+    })
+    .off('touchend', this)
 }
