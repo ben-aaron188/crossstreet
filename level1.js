@@ -27,7 +27,7 @@ $(document)
     css_center($("#highscore_table"));
     css_center_full($("#frameleft, #frameright"))
 
-//    return autoSizeText();
+    $("#exploretheuniverse").textfill()
 
     $.get("get_score.php", function(data) {
       retrieved = data;

@@ -115,7 +115,7 @@ function right() {
   })
 }
 
-function css_center(object, relative_object){
+function css_center(object, relative_object) {
   if (typeof relative_object === "undefined" || relative_object === null) {
     relative_object = object;
   }
@@ -125,45 +125,29 @@ function css_center(object, relative_object){
   })
 }
 
-function css_center_full(object){
+function css_center_full(object) {
   object.css({
     "margin-left": -($(object).width() / 2),
   })
 }
 
-
-function autoSizeText() {
-  var el, elements, _i, _len, _results;
-  elements = $('.resize');
-  if (elements.length < 0) {
-    return;
-  }
-  _results = [];
-  for (_i = 0, _len = elements.length; _i < _len; _i++) {
-    el = elements[_i];
-    _results.push((function(el) {
-      var resizeText, _results1;
-      resizeText = function() {
-        var elNewFontSize;
-        elNewFontSize = (parseInt($(el).css('font-size').slice(0, -2)) - 1) + 'px';
-        return $(el).css('font-size', elNewFontSize);
-      };
-      _results1 = [];
-      while (el.scrollHeight > el.offsetHeight) {
-        _results1.push(resizeText());
-      }
-       return _results1;
-    })(el));
-  }
-  return _results;
-};
-
-function set_frames(bg_object, nframes){
-  var div_width = $(bg_object).width();
-  var div_height = $(bg_object).height();
-  bg_object.css({
-    "width" : div_width / nframes,
-    "margin-left" : -((div_width / nframes)/2),
-    "margin-top" : -(div_height/2)
-  })
-}
+(function($) {
+    $.fn.textfill = function(maxFontSize) {
+        maxFontSize = parseInt(maxFontSize, 10);
+        return this.each(function(){
+            var ourText = $("span", this),
+                parent = ourText.parent(),
+                maxHeight = parent.height(),
+                maxWidth = parent.width(),
+                fontSize = parseInt(ourText.css("fontSize"), 10),
+                multiplier = maxWidth/ourText.width(),
+                newSize = (fontSize*(multiplier-0.1));
+            ourText.css(
+                "fontSize",
+                (maxFontSize > 0 && newSize > maxFontSize) ?
+                    maxFontSize :
+                    newSize
+            );
+        });
+    };
+})(jQuery);

@@ -99,7 +99,7 @@ display: none;
 position: absolute;
 width: 100%;
 height: 100vh;
-background: transparent url(images/background_space3.png) 0 0 repeat-y;
+background: transparent url(images/background_space4.png) 0 0 repeat-y;
 opacity: 0.5;
 border: 0px solid black;
 }
@@ -271,6 +271,7 @@ position: absolute;
 display: block;
 height: 10vh;
 width: 100%;
+border: 1px solid White;
 }
 #last_score {
 text-align: center;
@@ -279,7 +280,7 @@ display: block;
 height: 10vh;
 width: 100%;
 }
-#highscore { 
+#highscore {
 text-align: center;
 margin: 0 auto;
 position: absolute;
@@ -322,21 +323,21 @@ height: 10vh;
 width: 100%;
 }
 #taptomovethespaceship {
-top: 15%; 
+top: 15%;
 position: relative;
 width: 100%;
 height: 10vh;
 }
 #moveleft {
 text-align: center;
-top: 75%;  
+top: 75%;
 position: absolute;
 width: 30%;
 height: 3vh;
 }
 #moveright {
 text-align: center;
-top: 75%; 
+top: 75%;
 left: 65%;
 position: absolute;
 width: 30%;
@@ -344,7 +345,7 @@ height: 3vh;
 }
 #taptostart {
 margin: 0 auto;
-top: 27.5%; 
+top: 27.5%;
 position: relative;
 width: 30%;
 height: 3vh;
