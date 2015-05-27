@@ -19,17 +19,21 @@ $(document)
   .ready(function() {
 
     css_center($("#instr"), $(".window"));
-    css_center($("#gameover"), $(".window"));
+    css_center($("#gameover"));
     css_center($("#proxy_page"), $(".window"));
     css_center($("#black_page"), $(".window"));
-    css_center($("#instruction"), $(".window"));
-    css_center($("#plus"), $(".window"));
+    css_center($("#instruction"));
+    css_center($("#plus"));
     css_center($("#highscore_table"));
     css_center_full($("#frameleft, #frameright"))
     css_center($("#exploretheuniverse"));
     css_center($("#last_score"));
     css_center($("#highscore"));
     css_center($("#taptostartthegame"));
+    $("#taptostart").css({
+      "margin-left": ($(this).width() / 2),
+      "margin-top": ($(this).height() / 2)
+    });
     css_center($("#taptomovethespaceship"));
     css_center($("#taptostart"));
     css_center($("#game_over"));

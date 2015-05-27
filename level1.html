@@ -92,12 +92,11 @@
           <span id="highscore2"></span>
         </div>
 
-        <div id="yourname" class="score_display resize"><span>Your name:</span></div>
         <div id="button1" onclick="func02()"><span>PLAY AGAIN</span></div>
         <div id="button2" onclick="func03()"><span>SUBMIT SCORE</span></div>
 
         <form action="http://www.newlylabs.net/wp-content/uploads/app1/final/score_submit.php" method="post" data-mini="true" data-ajax="false">
-          <input name="NAME" id="NAME" class="resize" placeholder="your name" type='text' style="top: 52.5%; left: 10%;" maxlength="10">
+          <input name="NAME" id="yourname" class="resize" placeholder="your name" type='text' style="top: 52.5%; left: 10%;" maxlength="10">
           <input type="hidden" name="SCORE" id="SCORE" value="">
           <input type="submit" name="SUBMIT" id="SUBMIT" value="Next" style="visibility: hidden">
         </form>
@@ -121,8 +120,8 @@
 
   <div id="instruction">
 
-    <div id="instruction_circle"></div>
-    <div id="instruction_circle"></div>
+    <div id="instruction_circle_left"></div>
+    <div id="instruction_circle_right"></div>
     <div id="taptomovethespaceship" class="resize"><span>Tap to move the spaceship!</span></div>
     <div id="moveleft" class="resize"><span>Move left</span></div>
     <div id="moveright" class="resize"><span>Move right</span></div>
