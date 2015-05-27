@@ -18,6 +18,14 @@ var animationframeID,
 $(document)
   .ready(function() {
 
+    css_center($("#instr"), $(".window"));
+    css_center($("#gameover"), $(".window"));
+    css_center($("#proxy_page"), $(".window"));
+    css_center($("#black_page"), $(".window"));
+    css_center($("#instruction"), $(".window"));
+    css_center($("#plus"), $(".window"));
+    css_center($("#highscore_table, #frameleft, #frameright"));
+
     return autoSizeText();
 
     $.get("get_score.php", function(data) {
@@ -34,15 +42,8 @@ $(document)
       $("#high5_name").text(retrieved.name[4]);
       $("#high5_score").text(retrieved.score[4]);
     }, "json");
-    
-    css_center($("#instr"), $(".window"));
-    css_center($("#gameover"), $(".window"));
-    css_center($("#proxy_page"), $(".window"));
-    css_center($("#black_page"), $(".window"));
-    css_center($("#instruction"), $(".window"));
-    css_center($("#plus"), $(".window"));
-    css_center($("#highscore_table"));
-    
+
+
 		if (localStorage["lastscore"] > 0) {
       $("#lastscore").text(localStorage["lastscore"])
     } else {
@@ -149,7 +150,11 @@ function reset_car(object) {
   object.css({
     "left": posx + "%",
     "top": posy + "%",
-    "display": "block"
+    "display": "block",
+    "width" : "5%",
+    "height" : "0",
+    "background-size": "cover",
+    "padding-bottom" : "20%"
   });
 }
 
@@ -201,7 +206,11 @@ function init_cars(object) {
   object.css({
     "left": posx + "%",
     "top": posy + "%",
-    "display": "block"
+    "display": "block",
+    "width" : "5%",
+    "height" : "0",
+    "background-size": "cover",
+    "padding-bottom" : "20%"
   });
 }
 

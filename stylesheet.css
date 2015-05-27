@@ -9,39 +9,38 @@
 	overflow: hidden;
 }
 #player{
-		border: 0px solid White;
-		height: 76px;
-		width: 38px;
+		height: 0;
+		width: 15%;
+    padding-bottom: 30%;
 		background: transparent url(images/shuttle4.png) no-repeat;
+    background-size: cover;
 		position: absolute;
 		opacity: .99;
 		top: 65%;
-		margin: -38px 0 0 -19px;
 		cursor: none;
 }
 .car_div{
-	width: 13px;
-	height: 52px;
-	position: absolute;
-	margin: -26px 0 0 -6.5px;
-	border: 0px solid blue;
-	opacity: 0.9;
-	background: transparent url(images/meteo4.png) no-repeat;
-	display: none;
+  background: transparent url(images/meteo4.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+	opacity: 0.85;
+  width: 5%;
+  height: 0;
+  padding-bottom: 20%;
+  display: none;
 }
+
 #frameright{
-width: 20px;
+width: 5%;
 height: 100vh;
-margin: 0 0 0 -10px;
 background: transparent url(images/background_frame_right.png) no-repeat;
 position: absolute;
 opacity: .6;
 left: 2%;
 }
 #frameleft{
-width: 20px;
+width: 5%;
 height: 100vh;
-margin: 0 0 0 -10px;
 background: transparent url(images/background_frame_left.png) no-repeat;
 position: absolute;
 opacity: .6;
@@ -76,7 +75,7 @@ opacity: .4;
 }
 #highscore_table{
 text-align: left;
-border-spacing: 2px;
+border-spacing: 1px;
 font-size: 1.5em;
 left: 60%;
 width: 100%;

@@ -128,7 +128,6 @@ function css_center(object, relative_object){
 function autoSizeText() {
   var el, elements, _i, _len, _results;
   elements = $('.resize');
-  console.log(elements);
   if (elements.length < 0) {
     return;
   }
@@ -151,3 +150,13 @@ function autoSizeText() {
   }
   return _results;
 };
+
+function set_frames(bg_object, nframes){
+  var div_width = $(bg_object).width();
+  var div_height = $(bg_object).height();
+  bg_object.css({
+    "width" : div_width / nframes,
+    "margin-left" : -((div_width / nframes)/2),
+    "margin-top" : -(div_height/2)
+  })
+}
