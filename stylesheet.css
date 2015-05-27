@@ -90,11 +90,13 @@ height: 100%;
 position: absolute;
 top: 50%;
 left: 50%;
-text-align: center;
-z-index: 2;
-opacity :0.75;
+z-index: 4;
+background: black;
+border-radius: 10%;
+opacity: 0.75;
 font-family: Impact;
-background-color: black;
+color: white;
+text-align: center;
 display: none;
 }
 #background {
@@ -211,26 +213,17 @@ left: 70%;
 #instruction {
 width: 100%;
 height: 100%;
-top: 50%;
-left: 50%;
 position: absolute;
 text-align: center;
-z-index: 5;
-opacity: 0.5;
+top: 50%;
+left: 50%;
+z-index: 4;
+border-radius: 10%;
+opacity: 0.75;
+background: black;
 font-family: Impact;
-background-color: black;
 color: white;
 display: none;
-}
-#instruction_circle {
-width: 20%;
-height: 0%;
-padding-bottom: 20%;
-position: absolute;
-border: 5px solid white;
-border-radius: 100%;
-z-index: 100;
-background-color: transparent;
 }
 #instruction_fonts {
 text-align: center;
@@ -245,6 +238,11 @@ width: 50%;
 height: 20%;
 }
 #nonamemsg {
+top: 30%;
+left: 50%;
+width: 30%;
+height: 6vh;
+border: 5px solid white;
 position: absolute;
 display: block;
 z-index: 30;
@@ -255,6 +253,7 @@ color: red;
 display: none;
 }
 #startdiv {
+top: 82%;
 opacity: .75;
 text-align: center;
 display: block;
@@ -338,7 +337,10 @@ top: 27.5%;
 border: 5px solid white;
 }
 #yourname {
-position: absolute;
+top:42.5%;
+left: 50%;
+text-align: center;
+position: fixed;
 display: block;
 height: 3vh;
 width: 30%;
@@ -359,7 +361,7 @@ border: 5px solid white;
 text-align: center;
 top: 75%;
 left: 7%;
-position: absolute;
+position: fixed;
 width: 30%;
 height: 3vh;
 border: 5px solid white;
@@ -368,7 +370,7 @@ border: 5px solid white;
 text-align: center;
 top: 75%;
 left: 58%;
-position: absolute;
+position: fixed;
 width: 33%;
 height: 3vh;
 border: 5px solid white;
@@ -382,4 +384,28 @@ position: absolute;
 width: 30%;
 height: 3vh;
 border: 5px solid white;
+}
+#instruction_circle_right {
+top: 83%; 
+left: 10%;
+width: 20%;
+height: 0%;
+padding-bottom: 20%;
+position: absolute;
+border: 5px solid white;
+border-radius: 100%;
+z-index: 100;
+background-color: transparent;
+}
+#instruction_circle_left {
+top: 83%; 
+left: 68%;
+width: 20%;
+height: 0%;
+padding-bottom: 20%;
+position: absolute;
+border: 5px solid white;
+border-radius: 100%;
+z-index: 100;
+background-color: transparent;
 }
