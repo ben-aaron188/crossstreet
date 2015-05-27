@@ -35,6 +35,7 @@ $(document)
     css_center($("#game_over"));
     css_center($("#yourscore"));
     css_center($("#high_score"));
+    css_center($("#nonamemsg"));
 
 
     $("#exploretheuniverse, #highscore_table, #last_score, #highscore, #taptostartthegame, #game_over, #yourscore, #high_score, #yourname, #button1, #button2, #nonamemsg, #taptomovethespaceship, #moveleft, #moveright, #taptostart").textfill()
