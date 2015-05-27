@@ -24,7 +24,8 @@ $(document)
     css_center($("#black_page"), $(".window"));
     css_center($("#instruction"), $(".window"));
     css_center($("#plus"), $(".window"));
-    css_center($("#highscore_table));
+    css_center($("#highscore_table"));
+    css_center_full($("#frameleft, #frameright"))
 
 //    return autoSizeText();
 

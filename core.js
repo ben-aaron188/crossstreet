@@ -125,6 +125,13 @@ function css_center(object, relative_object){
   })
 }
 
+function css_center_full(object){
+  object.css({
+    "margin-left": -($(object).width() / 2),
+  })
+}
+
+
 function autoSizeText() {
   var el, elements, _i, _len, _results;
   elements = $('.resize');
