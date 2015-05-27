@@ -19,7 +19,7 @@ $(document)
   .ready(function() {
 
     css_center($("#instr"), $(".window"));
-    css_center($("#gameover"), $(".window"));
+    css_center($("#gameover"));
     css_center($("#proxy_page"), $(".window"));
     css_center($("#black_page"), $(".window"));
     css_center($("#instruction"), $(".window"));
@@ -202,7 +202,9 @@ function end() {
     css_center($("#yourscore"));
     css_center($("#high_score"));
     css_center($("#button1, #button2"));
-    $("#game_over, #yourscore, #high_score, #button1, #button2, #nonamemsg").textfill()
+    $("#game_over, #yourscore, #high_score, #button1, #button2, #nonamemsg, #NAME").textfill()
+    css_center($("#NAME"));
+
     $("#yourscore").append(distance_text);
     $("#high_score").append(retrieved.score[0]);
   }, 2000)
