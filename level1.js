@@ -38,12 +38,12 @@ $(document)
     css_center($("#nonamemsg"));
 
 
-    $("#exploretheuniverse, #highscore_table, #last_score, #highscore, #taptostartthegame, #game_over, #yourscore, #high_score, #yourname, #button1, #button2, #nonamemsg, #taptomovethespaceship, #moveleft, #moveright, #taptostart").textfill()
+    $("#exploretheuniverse, #highscore_table,  #last_score, #highscore, #taptostartthegame, #game_over, #yourscore, #high_score, #yourname, #button1, #button2, #nonamemsg, #taptomovethespaceship, #moveleft, #moveright, #taptostart").textfill()
 
 
     $.get("get_score.php", function(data) {
       retrieved = data;
-      $("#highscore1").text(retrieved.score[0]);
+      $("#highscore").append(retrieved.score[0]);
       $("#high1_name").text(retrieved.name[0]);
       $("#high1_score").text(retrieved.score[0]);
       $("#high2_name").text(retrieved.name[1]);
@@ -58,9 +58,9 @@ $(document)
 
 
     if (localStorage["lastscore"] > 0) {
-      $("#lastscore").text(localStorage["lastscore"])
+      $("#last_score").append(localStorage["lastscore"])
     } else {
-      $("#lastscore").text("NA")
+      $("#lastscore").append("NA")
     }
 
     find_ids($(".car_div"));
@@ -206,8 +206,8 @@ function end() {
   $("#loser").trigger("play");
   setTimeout(function() {
     $("#gameover, #restart").css("display", "block");
-    $("#score").text(distance_text);
-    $("#highscore2").text(65.123);
+    $("#yourscore").append(distance_text);
+    $("#high_score").append(retrieved.score[0]);
   }, 2000)
 
 }

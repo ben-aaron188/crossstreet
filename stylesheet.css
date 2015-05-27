@@ -279,22 +279,22 @@ font-weight: bold;
 }
 #last_score {
 top: 23%;
-left: 40%;
+left: 50%;
 text-align: left;
 position: absolute;
 display: block;
 height: 3vh;
-width: 30%;
+width: 50%;
 border: 5px solid white;
 }
 #highscore {
 top: 30%;
-left: 40%;
+left: 50%;
 text-align: left;
 position: absolute;
 display: block;
 height: 3vh;
-width: 30%;
+width: 50%;
 border: 5px solid white;
 }
 #taptostartthegame {
@@ -386,7 +386,7 @@ height: 3vh;
 border: 5px solid white;
 }
 #instruction_circle_right {
-top: 83%; 
+top: 83%;
 left: 10%;
 width: 20%;
 height: 0%;
@@ -398,7 +398,7 @@ z-index: 100;
 background-color: transparent;
 }
 #instruction_circle_left {
-top: 83%; 
+top: 83%;
 left: 68%;
 width: 20%;
 height: 0%;
