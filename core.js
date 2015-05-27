@@ -128,6 +128,10 @@ function css_center(object, relative_object){
 function autoSizeText() {
   var el, elements, _i, _len, _results;
   elements = $('.resize');
+<<<<<<< HEAD
+=======
+  console.log(elements);
+>>>>>>> 2d6f2dd660afdc33eebc9ee193afa30749a3b19a
   if (elements.length < 0) {
     return;
   }
@@ -150,6 +154,7 @@ function autoSizeText() {
   }
   return _results;
 };
+<<<<<<< HEAD
 
 function set_frames(bg_object, nframes){
   var div_width = $(bg_object).width();
@@ -160,3 +165,5 @@ function set_frames(bg_object, nframes){
     "margin-top" : -(div_height/2)
   })
 }
+=======
+>>>>>>> 2d6f2dd660afdc33eebc9ee193afa30749a3b19a

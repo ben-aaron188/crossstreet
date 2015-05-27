@@ -37,17 +37,17 @@
       </audio>
 
       <div id="instr">
-        <p class="score_display" style="top: 2%; font-size: 2.2em; font-weight: bold">Explore the Universe</p>
-        <p class="score_display" style="top: 20%; font-size: 1.3em">Last Score:
+        <div id="#exploretheuniverse" class="score_display resize" style="top: 5%; font-weight: bold">Explore the Universe</div>
+        <div id ="last_score" class="score_display resize" style="top: 23%">Last Score: 
           <span id="lastscore"></span>
-        </p>
-        <p class="score_display" style="top: 25%;  font-size: 1.3em">High Score:
+        </div>
+        <div id="highscore" class="score_display resize" style="top: 30%">High Score:
           <span id="highscore1"></span>
-        </p>
-        <p class="score_display" style="top: 73%; font-size: 1.5em">Tap to start the game!</p>
+        </div>
+        <div id="taptostartthegame" class="score_display resize" style="top: 73%">Tap to start the game!</div>
         <div id="startdiv" style="top: 82%"></div>
 
-        <table id="highscore_table" style="top: 55%">
+        <table id="highscore_table" class="resize" style="top: 55%">
           <tr>
             <th></th>
             <th>NAME</th>
@@ -82,24 +82,24 @@
       </div>
 
       <div id="gameover">
-        <p class="score_display" style="top: 3%; font-size: 3em">Game over!</p>
-        <p class="score_display" style="top: 20%; font-size: 1.75em">Your score:
+        <div id="gameover!" class="score_display resize" style="top: 3%">Game over!</div>
+        <div id="yourscore" class="score_display resize" style="top: 20%">Your score:
           <span id="score"></span>
-        </p>
-        <p class="score_display" style="top: 27.5%; font-size: 1.75em">High Score:
+        </div>
+        <div id="high_score" class="score_display resize" style="top: 27.5%">High Score:
           <span id="highscore2"></span>
-        </p>
-        <p class="score_display" style="top:42.5%; font-size: 1.75em">Your name:</p>
+        </div>
+        <div id="yourname" class="score_display resize" style="top:42.5%">Your name:</div>
         <div id="button1" onclick="func02()">PLAY</br>AGAIN</div>
         <div id="button2" onclick="func03()">SUBMIT SCORE</div>
         <form action="http://www.newlylabs.net/wp-content/uploads/app1/final/score_submit.php" method="post" data-mini="true" data-ajax="false">
-          <input name="NAME" id="NAME" placeholder="your name" type='text' style="top: 52.5%; left: 10%;" maxlength="10">
+          <input name="NAME" id="NAME" class="resize" placeholder="your name" type='text' style="top: 52.5%; left: 10%;" maxlength="10">
           <input type="hidden" name="SCORE" id="SCORE" value="">
           <input type="submit" name="SUBMIT" id="SUBMIT" value="Next" style="visibility: hidden">
         </form>
       </div>
 
-      <div id="nonamemsg" style="font-size: 2em; top: 30%">Please type in your name first!</div>
+      <div id="nonamemsg" class="resize" style="top: 30%">Please type in your name first!</div>
 
       <div id="player"></div>
       <div id="car_div1" class="car_div"></div>
@@ -118,10 +118,10 @@
   <div id="instruction">
     <div id="instruction_circle" style="top: 83%; left: 10%"></div>
     <div id="instruction_circle" style="top: 83%; left: 68%"></div>
-    <div id="instruction_fonts" style="top: 15%; font-size: 3em; position: relative;">Tap to move</br>the spaceship!</div>
-    <p id="instruction_fonts" style="top: 68%; left: 8%; font-size: 1.5em; position: absolute">Move left</p>
-    <p id="instruction_fonts" style="top: 68%; left: 65%; font-size: 1.5em; position: absolute">Move right</p>
-    <p id="instruction_fonts" style="top: 27.5%; font-size: 2.3em; position: relative">Tap to start!</p>
+    <div id="taptomovethespaceship" class="resize">Tap to move</br>the spaceship!</div>
+    <div id="moveleft" class="resize">Move left</div>
+    <div id="moveright" class="resize">Move right</div>
+    <div id="taptostart" class="resize">Tap to start!</div>
   </div>
 
 
