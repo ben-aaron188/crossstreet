@@ -31,20 +31,15 @@ $(document)
       $("#high5_name").text(retrieved.name[4]);
       $("#high5_score").text(retrieved.score[4]);
     }, "json");
-
-    $("#instr, #gameover, #proxy_page, #black_page, #instruction").css({
-      "margin-left": -($(".window").width() / 2),
-      "margin-top": -($(".window").height() / 2)
-    })
-    $("#plus").css({
-      "margin-left": -($(".window").width() / 2),
-      "margin-top": -($(".window").height() / 20)
-    })
-    $("#highscore_table").css({
-      "margin-left": -($("#highscore_table").width() / 2),
-      "margin-top": -($("#highscore_table").height() / 2)
-    })
-
+    
+    css_center($("#instr"), $(".window"));
+    css_center($("#gameover"), $(".window"));
+    css_center($("#proxy_page"), $(".window"));
+    css_center($("#black_page"), $(".window"));
+    css_center($("#instruction"), $(".window"));
+    css_center($("#plus"), $(".window"));
+    css_center($("#highscore_table"));
+    
 		if (localStorage["lastscore"] > 0) {
       $("#lastscore").text(localStorage["lastscore"])
     } else {
