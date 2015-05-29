@@ -31,12 +31,9 @@ $(document)
     css_center($("#taptostartthegame"));
 
 
-    $("#exploretheuniverse, #highscore_table, #last_score, #highscore, #taptostartthegame").textfill()
-
-
     $.get("get_score.php", function(data) {
       retrieved = data;
-      $("#highscore").append(retrieved.score[0]);
+      $("#highscore span:nth-child(2)").text(retrieved.score[0]);
       $("#high1_name").text(retrieved.name[0]);
       $("#high1_score").text(retrieved.score[0]);
       $("#high2_name").text(retrieved.name[1]);
@@ -51,10 +48,11 @@ $(document)
 
 
     if (localStorage["lastscore"] > 0) {
-      $("#last_score").append(localStorage["lastscore"])
+      $("#last_score span:nth-child(2)").text(localStorage["lastscore"])
     } else {
       $("#lastscore").append("NA")
     }
+
 
     find_ids($(".car_div"));
     set_player($("#player"));
@@ -96,7 +94,7 @@ function move_car(object, speed) {
   });
   collision_detector();
   object.css({
-    top: "+=" + speed
+    top: "+=" + speed + "vh"
   });
   get_boundary(object);
   if (object_bottom > $(window).height()) {
@@ -195,6 +193,7 @@ function end() {
   setTimeout(function() {
     $("#player").toggle("explode");
   }, 400)
+  $("#perm").trigger("pause");
   $("#loser").trigger("play");
   setTimeout(function() {
     $("#gameover, #restart").css("display", "block");
@@ -202,11 +201,12 @@ function end() {
     css_center($("#yourscore"));
     css_center($("#high_score"));
     css_center($("#button1, #button2"));
-    $("#game_over, #yourscore, #high_score, #button1, #button2, #nonamemsg, #NAME").textfill()
-    css_center($("#NAME"));
-
-    $("#yourscore").append(distance_text);
-    $("#high_score").append(retrieved.score[0]);
+    $("#NAME").css({
+      "margin-left": -(($("#NAME").width() / 2)+9),
+      "margin-top": -(($("#NAME").height() / 2)+9)
+    });
+    $("#yourscore span:nth-child(2)").text(distance_text);
+    $("#high_score span:nth-child(2)").text(retrieved.score[0]);
   }, 2000)
 
 }
@@ -246,7 +246,7 @@ function overflow_detector() {
 }
 
 function car_speed() {
-  var car_speed = randomdigit(2, 4);
+  var car_speed = randomdigit(2, 6);
   return car_speed;
 }
 
@@ -263,7 +263,6 @@ function points() {
 function init() {
   $("#instruction").hide();
   css_center($("#plus"));
-  $("#plus").textfill();
   $("#perm").prop("volume", 0.5).trigger("play");
   $("#gameover").prop("volume", 0.9);
   $("#boing").prop("volume", 1)
@@ -355,7 +354,8 @@ function instruction()  {
     })
   css_center($("#taptomovethespaceship"));
   css_center($("#taptostart"));
-  $("#taptomovethespaceship, #moveleft, #moveright, #taptostart").textfill()
+  css_center($("#moveleft, #moveright"))
+  css_center($("#instruction_circle_left, #instruction_circle_right"));
   $("#instruction")
     .touchstart(function(e) {
       init();

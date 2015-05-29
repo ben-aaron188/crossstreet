@@ -102,7 +102,7 @@ function left() {
   collision_detector();
   overflow_detector();
   $("#player").css({
-    left: "-=10"
+    left: "-=5vw"
   })
 }
 
@@ -111,7 +111,7 @@ function right() {
   collision_detector();
   overflow_detector();
   $("#player").css({
-    left: "+=10"
+    left: "+=5vw"
   })
 }
 
