@@ -94,7 +94,7 @@ function move_car(object, speed) {
   });
   collision_detector();
   object.css({
-    top: "+=" + speed + "vh"
+    top: "+=" + speed
   });
   get_boundary(object);
   if (object_bottom > $(window).height()) {
@@ -246,8 +246,9 @@ function overflow_detector() {
 }
 
 function car_speed() {
-  var car_speed = randomdigit(2, 6);
-  return car_speed;
+  var car_speed = randomdigit(0.5, 2.5);
+  var car_speed_rel = ($(".window").height()*car_speed/100)*0.65
+  return car_speed_rel;
 }
 
 function points() {

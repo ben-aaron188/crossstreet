@@ -98,20 +98,22 @@ function find_ids(class_name) {
 }
 
 function left() {
+  var rel_movement = ($(".window").width()*4/100)*0.85;
   animationframeID = requestAnimationFrame(left);
   collision_detector();
   overflow_detector();
   $("#player").css({
-    left: "-=5vw"
+    left: "-=" + rel_movement
   })
 }
 
 function right() {
+  var rel_movement = ($(".window").width()*4/100)*0.85;
   animationframeID = requestAnimationFrame(right);
   collision_detector();
   overflow_detector();
   $("#player").css({
-    left: "+=5vw"
+    left: "+=" + rel_movement
   })
 }
 
@@ -130,45 +132,3 @@ function css_center_full(object) {
     "margin-left": -($(object).width() / 2),
   })
 }
-
-(function($) {
-    $.fn.textfill = function(maxFontSize) {
-        maxFontSize = parseInt(maxFontSize, 10);
-        return this.each(function(){
-            var ourText = $("span", this),
-                parent = ourText.parent(),
-                maxHeight = parent.height(),
-                maxWidth = parent.width(),
-                fontSize = parseInt(ourText.css("fontSize"), 10),
-                multiplier = maxWidth/ourText.width(),
-                newSize = (fontSize*(multiplier-0.1));
-            ourText.css(
-                "fontSize",
-                (maxFontSize > 0 && newSize > maxFontSize) ?
-                    maxFontSize :
-                    newSize
-            );
-        });
-    };
-})(jQuery);
-
-(function($) {
-    $.fn.textfill_table = function(maxFontSize) {
-        maxFontSize = parseInt(maxFontSize, 10);
-        return this.each(function(){
-            var ourText = $("td", this),
-                parent = ourText.parent(),
-                maxHeight = parent.height(),
-                maxWidth = parent.width(),
-                fontSize = parseInt(ourText.css("fontSize"), 10),
-                multiplier = maxWidth/ourText.width(),
-                newSize = (fontSize*(multiplier-0.1));
-            ourText.css(
-                "fontSize",
-                (maxFontSize > 0 && newSize > maxFontSize) ?
-                    maxFontSize :
-                    newSize
-            );
-        });
-    };
-})(jQuery);
