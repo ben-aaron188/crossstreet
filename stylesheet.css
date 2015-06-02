@@ -10,13 +10,13 @@
 }
 #player{
 		height: 0;
-		width: 15%;
-    padding-bottom: 30%;
+		width: 10%;
+    padding-bottom: 20%;
 		background: transparent url(images/shuttle4.png) no-repeat;
     background-size: cover;
 		position: absolute;
 		opacity: .99;
-		top: 65%;
+		top: 60%;
 		cursor: none;
 }
 .car_div{
@@ -24,9 +24,9 @@
   background-size: cover;
   position: absolute;
 	opacity: 0.85;
-  width: 5%;
+  width: 3%;
   height: 0;
-  padding-bottom: 20%;
+  padding-bottom: 12%;
   display: none;
 }
 
@@ -63,8 +63,8 @@ text-align: center;
 #plus{
 width: 90%;
 position: absolute;
-font-size: 18vw;
-top: 85%;
+font-size: 16vw;
+top: 80%;
 left: 50%;
 font-family: Impact;
 color: white;

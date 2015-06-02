@@ -246,8 +246,8 @@ function overflow_detector() {
 }
 
 function car_speed() {
-  var car_speed = randomdigit(0.5, 2.5);
-  var car_speed_rel = ($(".window").height()*car_speed/100)*0.65
+  var car_speed = randomdigit(1.5, 3.5);
+  var car_speed_rel = ($(".window").height()*car_speed/100)//*0.65
   return car_speed_rel;
 }
 
